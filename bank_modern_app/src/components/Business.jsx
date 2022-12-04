@@ -3,14 +3,26 @@ import { features } from '../constants';
 import styles, { layout } from '../styles';
 import Button from './Button';
 
+
+
 const FeatureCard = ({ icon, title, content, index }) => (
-  <div>
+  <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
       <div>
         <img src={icon} alt="icon" className="w-[50%] h-[50%] object-contain" />
+      </div>
+      <div className="flex-1 flex flex-col ml-3">
+        <h4 className="font-poppins font-semibold text-white text-[18px] leading-[23px] mb-1">
+          {title}
+        </h4>
+        <p className="font-poppins font-normal text-dimWhite text-[18px] leading-[23px] mb-1">
+          {content}
+        </p>
       </div>
   </div>
 
 )
+
+
 
 const Business = () => {
   return (
@@ -33,5 +45,7 @@ const Business = () => {
     </section>
   )
 }
+
+
 
 export default Business
